@@ -1,0 +1,5 @@
+HP/quartz/quartz
+Dell/mica/mica
+Acer/moonstone/moonstone
+ASUS/lapis/lapis
+Lenovo/ruby/ruby

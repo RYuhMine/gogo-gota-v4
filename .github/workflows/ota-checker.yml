@@ -5,6 +5,9 @@ on:
     - cron: '*/5 * * * *'   # every 5 minutes
   workflow_dispatch:          # allow manual runs from the Actions tab
 
+permissions:
+  contents: write   # lets the bot push archived.txt
+
 jobs:
   check-ota:
     runs-on: ubuntu-latest
@@ -29,7 +32,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add archived.txt
+          git add archived.txt [0-9]*.txt
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to archived.txt"
           else

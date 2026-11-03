@@ -715,13 +715,40 @@ def load_file_pairs():
     return result
 
 
+def build_info_from_fingerprint(fingerprint):
+    """'oem/prod/dev:17/CL4B.1/123:user/release-keys' -> '17/CL4B.1/123' (or None)."""
+    parts = (fingerprint or "").split(":")
+    if len(parts) != 3:
+        return None
+    info = parts[1]
+    if len(info.split("/")) != 3 or not all(info.split("/")):
+        return None
+    return info
+
+
+def add_build_to_file(filename, build_info):
+    """Appends build_info to filename if not already there. Returns True if added."""
+    with open(filename, "r", encoding="utf-8-sig", newline="") as f:
+        content = f.read()
+    existing = {l.strip() for l in content.splitlines()}
+    if build_info in existing:
+        return False
+    eol = "\r\n" if "\r\n" in content else "\n"
+    if content and not content.endswith("\n"):
+        content += eol
+    content += build_info + eol
+    with open(filename, "w", encoding="utf-8", newline="") as f:
+        f.write(content)
+    return True
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 #  Core checkin with fingerprint chain
 # ─────────────────────────────────────────────────────────────────────────────
 
 def checkin_with_fingerprint_chain(initial_fingerprint, archived_urls,
                                    new_findings, expanded_urls, visited_fingerprints,
-                                   indent="  "):
+                                   build_file=None, indent="  "):
     """
     expanded_urls and visited_fingerprints are shared across the whole run.
     Each unique fingerprint is checked with checkin only once per run.
@@ -764,6 +791,16 @@ def checkin_with_fingerprint_chain(initial_fingerprint, archived_urls,
                     if clean_fp:
                         log(f"{indent}Fingerprint: {clean_fp}")
                         ota['post_build'] = clean_fp
+                        # remember the new build so the next runs use it
+                        new_build = build_info_from_fingerprint(clean_fp)
+                        if new_build and build_file:
+                            try:
+                                if add_build_to_file(build_file, new_build):
+                                    log(f"{indent}Added build {new_build} to {build_file}")
+                                else:
+                                    log(f"{indent}Build {new_build} already in {build_file}")
+                            except Exception as e:
+                                log(f"{indent}[WARN] Could not update {build_file}: {e}")
                     if clean_pre:
                         log(f"{indent}Pre-build:   {clean_pre}")
                         ota['pre_build'] = clean_pre
@@ -810,12 +847,12 @@ def run_check():
     for dev_file, build_file, devices, builds in pairs:
         log(f"\n--- Pair {dev_file} + {build_file} ---")
         for dev_idx, device in enumerate(devices, 1):
-            for build_idx, build in enumerate(builds, 1):
+            for build_idx, build in enumerate(list(builds), 1):
                 fingerprint = f"{device}:{build}:{KEY_SUFFIX}"
                 log(f"[{dev_file} {dev_idx}/{len(devices)} | {build_file} {build_idx}/{len(builds)}] {fingerprint}")
                 checkin_with_fingerprint_chain(
                     fingerprint, archived_urls, new_findings,
-                    expanded_urls, visited_fps
+                    expanded_urls, visited_fps, build_file=build_file
                 )
 
     log(f"\nRun complete. {len(new_findings)} new finding(s) this run.")

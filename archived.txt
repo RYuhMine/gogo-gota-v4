@@ -19,3 +19,13 @@ https://android.googleapis.com/packages/ota-api/package/94e25ebba1cc30dce36acfdb
 https://android.googleapis.com/packages/ota-api/package/4f67032d4fad270713510b4a6e8deb44616fe3eb.zip
 https://android.googleapis.com/packages/ota-api/package/1a43c7bd7871ff0ab6dacff321c2bf1b4556d54c.zip
 https://android.googleapis.com/packages/ota-api/package/f050398bf821f79eff6baf6ccb2c1a09c42e6d43.zip
+https://ota.googlezip.net/packages/ota-api/package/6805affa50fa07883c2f9934cec8fcf9b1fdacfe.zip
+https://ota.googlezip.net/packages/ota-api/package/cf448a11aeb0b4a29d07dbbd7a787a750fcaed49.zip
+https://ota.googlezip.net/packages/ota-api/package/42aed2a6549ece8d49379dfd24fa12cbde5a0edc.zip
+https://ota.googlezip.net/packages/ota-api/package/ce9b569334fea5087a89bc1965b7c2e4714af31f.zip
+https://ota.googlezip.net/packages/ota-api/package/b079a4154df2d3aa6bf5910218031a77b159f4a3.zip
+https://ota.googlezip.net/packages/ota-api/package/6969fa302df66f8c732925a00052045b5f36f31e.zip
+https://ota.googlezip.net/packages/ota-api/package/7ff1028fe0623e3d6621fd74a57ecac82a2270b9.zip
+https://ota.googlezip.net/packages/ota-api/package/321f6d568e4c8ffc7c3d8d322ca3b21bd68f8d29.zip
+https://ota.googlezip.net/packages/ota-api/package/e449d9071eb3627cf9e68794e9adce74806a17a0.zip
+https://ota.googlezip.net/packages/ota-api/package/6a4a82fbe657a8396cbc14f90e62984ca9635900.zip

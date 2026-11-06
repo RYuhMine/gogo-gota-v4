@@ -33,3 +33,4 @@ https://ota.googlezip.net/packages/ota-api/package/368512957e16b0df0b2a1d0c1e86e
 https://ota.googlezip.net/packages/ota-api/package/d2f3bf9a89a4965179e7a832f573c50b05e8d8a4.zip
 https://ota.googlezip.net/packages/ota-api/package/c8f571c5b5c20650264e3e9cace7b574f9adff80.zip
 https://ota.googlezip.net/packages/ota-api/package/e8de483951446132047d8895a87266ecbb06d55e.zip
+https://ota.googlezip.net/packages/ota-api/package/83fee75b1f2bd7d453b48f5a86ea55ca3a3f94e2.zip

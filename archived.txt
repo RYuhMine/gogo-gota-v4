@@ -34,3 +34,7 @@ https://ota.googlezip.net/packages/ota-api/package/d2f3bf9a89a4965179e7a832f573c
 https://ota.googlezip.net/packages/ota-api/package/c8f571c5b5c20650264e3e9cace7b574f9adff80.zip
 https://ota.googlezip.net/packages/ota-api/package/e8de483951446132047d8895a87266ecbb06d55e.zip
 https://ota.googlezip.net/packages/ota-api/package/83fee75b1f2bd7d453b48f5a86ea55ca3a3f94e2.zip
+https://android.googleapis.com/packages/ota-api/package/3112570e35e2e29e1dc9ec8d83d0fb2aca3ef60b.zip
+https://android.googleapis.com/packages/ota-api/package/e090d9f37b6beed62ada6d82882da71712a0f010.zip
+https://android.googleapis.com/packages/ota-api/package/9424accbb7b931fd3aaa1b208f4aed242f4ae086.zip
+https://android.googleapis.com/packages/ota-api/package/033c8df1a417f2ac6e46ea9057117d5f4095d212.zip

@@ -1,1 +1,2 @@
 solanamobile/seeker/seeker
+solanamobile/seeker_eea/seeker
